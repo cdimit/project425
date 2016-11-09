@@ -22,5 +22,7 @@ Route::get('/home', 'HomeController@index');
 Route::group(['middleware' => 'admin'], function(){
 
   Route::get('/dashboard', 'HomeController@dash');
+  Route::get('/dashboard','QuestionController@view');
+  Route::post('/question/create','QuestionController@create');
 
 });
