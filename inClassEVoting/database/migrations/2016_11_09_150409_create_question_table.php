@@ -24,7 +24,7 @@ class CreateQuestionTable extends Migration
           $table->string('label');
           $table->boolean('isPic');
           $table->integer('admin_id')->unsigned();
-          $table->boolean('lock');
+          $table->boolean('lock')->default(0);
           $table->timestamps();
           $table->foreign('admin_id')->references('id')->on('users');
           $table->foreign('course_id')->references('id')->on('course');
