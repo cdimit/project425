@@ -20,10 +20,10 @@ class CreateQuestionTable extends Migration
           $table->string('C');
           $table->string('D');
           $table->string('solution');
-          $table->integer('course_id');
+          $table->integer('course_id')->unsigned();
           $table->string('label');
           $table->boolean('isPic');
-          $table->integer('admin_id');
+          $table->integer('admin_id')->unsigned();
           $table->boolean('lock');
           $table->timestamps();
           $table->foreign('admin_id')->references('id')->on('users');
