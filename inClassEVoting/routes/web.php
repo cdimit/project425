@@ -18,3 +18,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+Route::group(['middleware' => 'admin'], function(){
+
+  Route::get('/dashboard', 'HomeController@dash');
+
+});
