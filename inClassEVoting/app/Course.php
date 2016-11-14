@@ -11,6 +11,8 @@ class Course extends Model
    *
    * @var array
    */
+  protected $table = "course";
+
   protected $fillable = [
       'name', 'code',
   ];

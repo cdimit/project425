@@ -25,4 +25,7 @@ Route::group(['middleware' => 'admin'], function(){
   Route::get('/dashboard/question','QuestionController@view');
   Route::post('/question/create','QuestionController@create');
 
+  Route::get('/dashboard/course', 'CourseController@view');
+  Route::post('/course/create', 'CourseController@create');
+
 });
