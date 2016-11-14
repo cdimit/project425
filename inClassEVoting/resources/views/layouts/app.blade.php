@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'in-Class e-Voting') }}</title>
 
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
@@ -36,7 +36,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        {{ config('app.name', 'in-Class e-Voting') }}
                     </a>
                 </div>
 
@@ -60,6 +60,9 @@
 
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
+                                      @if(Auth::user()->isAdmin())
+                                        <a href="/dashboard">Dashboard</a>
+                                      @endif
                                         <a href="#">My Profile</a>
                                         <a href="{{ url('/logout') }}"
                                             onclick="event.preventDefault();
