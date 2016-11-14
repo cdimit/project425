@@ -9,7 +9,7 @@ class QuestionController extends Controller
 {
   public function view()
   {
-      return view('dashboard.questions');
+      return view('dashboard.questions.create');
   }
   public function create(Request $req)
   {
