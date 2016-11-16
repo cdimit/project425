@@ -14,7 +14,7 @@ class Course extends Model
   protected $table = "course";
 
   protected $fillable = [
-      'name', 'code',
+      'name', 'code','user_id'
   ];
 
 }
