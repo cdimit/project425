@@ -15,13 +15,9 @@ class CreateAnswer1Table extends Migration
     {
       Schema::create('answer1', function (Blueprint $table) {
           $table->increments('id');
-          $table->integer('user_id')->unsigned();
           $table->integer('question_id')->unsigned();
           $table->integer('answer');
-          $table->integer('semester');
           $table->timestamps();
-
-          $table->foreign('user_id')->references('id')->on('users');
           $table->foreign('question_id')->references('id')->on('questions');
       });
     }

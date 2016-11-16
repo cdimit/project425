@@ -24,10 +24,10 @@ class CreateQuestionTable extends Migration
           $table->integer('course_id')->unsigned();
           $table->string('label');
           $table->boolean('isPic')->default(0);
-          $table->integer('admin_id')->unsigned();
           $table->boolean('lock')->default(1);
+          $table->integer('seconds')->default(60);
+          $table->integer('chapter');
           $table->timestamps();
-          $table->foreign('admin_id')->references('id')->on('users');
           $table->foreign('course_id')->references('id')->on('course');
       });
 
