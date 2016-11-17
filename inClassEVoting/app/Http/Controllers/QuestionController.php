@@ -4,12 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Questions;
+use Auth;
 
 class QuestionController extends Controller
 {
-  public function crateView()
+  public function createView()
   {
-      return view('dashboard.questions.create');
+      $courses = Auth::user()->courses;
+      return view('dashboard.questions.create')->with('courses', $courses);
   }
 
   public function view()
@@ -33,7 +35,7 @@ class QuestionController extends Controller
 
     ]);
 
-    return redirect()->back();
+    return redirect()->back()->with('status', 'Question was successfully created!');;
   }
 }
 #'question','A','B','C','D','solution','course_id','label','isPic','lock','seconds','chapter'

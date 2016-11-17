@@ -20,11 +20,15 @@ Route::get('/', 'HomeController@index');
 
 Route::group(['middleware' => 'auth'], function(){
 
+  //dashboard
   Route::get('/dashboard', 'AdminController@home');
-  Route::get('/dashboard/question', 'AdminController@view');
+
+  //Questions
+  Route::get('/dashboard/question', 'QuestionController@view');
   Route::get('/dashboard/question/create','QuestionController@createView');
   Route::post('/question/create','QuestionController@create');
 
+  //Courses
   Route::get('/dashboard/course', 'CourseController@view');
   Route::get('/dashboard/course/create', 'CourseController@createView');
   Route::post('/course/create', 'CourseController@create');

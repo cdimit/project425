@@ -7,9 +7,14 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Questions</div>
                 <div class="panel-body">
+                  @if (session('status'))
+                    <div class="alert alert-success">
+                      <strong>{{ session('status') }}</strong>
+                    </div>
+                  @endif
+
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/question/create') }}">
                         {{ csrf_field() }}
-
 
                         <div class="form-group{{ $errors->has('question') ? ' has-error' : '' }}">
                             <label for="question" class="col-md-4 control-label">Question</label>
@@ -98,12 +103,16 @@
                         </div>
 
 
+
                         <div class="form-group{{ $errors->has('course_id') ? ' has-error' : '' }}">
                             <label for="course_id" class="col-md-4 control-label">Course Id</label>
 
                             <div class="col-md-6">
-                                <input id="course_id" type="text" class="form-control" name="course_id" value="{{ old('course_id') }}" required>
-
+                              <select name="course_id">
+                                @foreach($courses as $course)
+                                <option value="{{$course->id}}">{{$course->name}} - {{$course->code}}</option>
+                                @endforeach
+                              </select>
                                 @if ($errors->has('course_id'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('course_id') }}</strong>
@@ -158,7 +167,7 @@
                         </div>
 
 
-                  
+
 
 
 

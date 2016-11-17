@@ -29,6 +29,6 @@ class CourseController extends Controller
 
     ]);
 
-    return redirect()->back();
+    return redirect()->back()->with('status', 'Course was successfully created!');
   }
 }
