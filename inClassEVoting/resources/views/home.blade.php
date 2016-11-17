@@ -8,7 +8,18 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-                    You are logged in!
+                      @if($questions->count()==0)
+                        No questions available
+                      @else
+                        @foreach($questions as $que)
+                        <a href="/question/{{$que->id}}" class="btn btn-default">{{$que->course->code}}: {{$que->question}}</a>
+                        <br>
+                        @endforeach
+                      @endif
+
+
+
+
                 </div>
             </div>
         </div>
