@@ -20,8 +20,10 @@ Route::get('/', 'HomeController@index');
 
 
   Route::get('/dashboard', 'AdminController@home');
+  Route::get('/dashboard/question', 'AdminController@view');
   Route::get('/dashboard/question/create','QuestionController@createView');
   Route::post('/question/create','QuestionController@create');
 
+  Route::get('/dashboard/course', 'CourseController@view');
   Route::get('/dashboard/course/create', 'CourseController@createView');
   Route::post('/course/create', 'CourseController@create');

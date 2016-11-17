@@ -11,6 +11,12 @@ class QuestionController extends Controller
   {
       return view('dashboard.questions.create');
   }
+
+  public function view()
+  {
+      return view('dashboard.questions.view');
+  }
+
   public function create(Request $req)
   {
     Questions::create([

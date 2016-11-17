@@ -12,6 +12,13 @@ class CourseController extends Controller
   {
       return view('dashboard.courses.create');
   }
+
+
+  public function view()
+  {
+      return view('dashboard.courses.view');
+  }
+
   public function create(Request $req)
   {
     $user_id=Auth::user()->id;
