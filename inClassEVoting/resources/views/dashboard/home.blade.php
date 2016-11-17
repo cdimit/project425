@@ -8,11 +8,10 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-                    Hello Admin
+                    <strong>Hello {{$user->first_name}}</strong>
                     <br>
-                    <a href="/dashboard/question/create" class="btn btn-primary">Create Question</a>
-                    <a href="/dashboard/course/create" class="btn btn-primary">Add Course</a>
-
+                    <a href="/dashboard/course" class="btn btn-default">My Courses ({{$user->courses->count()}})</a><br>
+                    <a href="/dashboard/question" class="btn btn-default">My Questions</a>
                 </div>
             </div>
         </div>
