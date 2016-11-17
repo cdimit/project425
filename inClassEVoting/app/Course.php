@@ -17,4 +17,13 @@ class Course extends Model
       'name', 'code','user_id'
   ];
 
+  public function questions()
+  {
+    return $this->hasMany('App\Questions');
+  }
+
+  public function user()
+  {
+    return $this->belongsTo('App\User', 'user_id');
+  }
 }

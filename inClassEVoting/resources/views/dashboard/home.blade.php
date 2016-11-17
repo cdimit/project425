@@ -10,8 +10,8 @@
                 <div class="panel-body">
                     Hello Admin
                     <br>
-                    <a href="question" class="btn btn-primary">Create Question</a>
-                    <a href="course" class="btn btn-primary">Add Course</a>
+                    <a href="/dashboard/question/create" class="btn btn-primary">Create Question</a>
+                    <a href="/dashboard/course/create" class="btn btn-primary">Add Course</a>
 
                 </div>
             </div>
