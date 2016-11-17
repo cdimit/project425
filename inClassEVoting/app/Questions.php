@@ -32,4 +32,9 @@ class Questions extends Model
   {
     return $this->belongsTo('App\Course', 'course_id');
   }
+
+  public function scopeUnlock($query)
+  {
+    return $query->where('lock', '0')->get();
+  }
 }

@@ -8,7 +8,7 @@ use Auth;
 
 class CourseController extends Controller
 {
-  public function view()
+  public function createView()
   {
       return view('dashboard.courses.create');
   }

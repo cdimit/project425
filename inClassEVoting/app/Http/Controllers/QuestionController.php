@@ -7,7 +7,7 @@ use App\Questions;
 
 class QuestionController extends Controller
 {
-  public function view()
+  public function crateView()
   {
       return view('dashboard.questions.create');
   }
