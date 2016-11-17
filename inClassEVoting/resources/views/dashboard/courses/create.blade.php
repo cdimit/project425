@@ -11,34 +11,36 @@
                         {{ csrf_field() }}
 
 
-                        <div class="form-group{{ $errors->has('question') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-4 control-label">Counrse Name</label>
+                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                            <label for="name" class="col-md-4 control-label">Course Name</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" value="{{ old('question') }}" required>
+                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required>
 
-                                @if ($errors->has('question'))
+                                @if ($errors->has('name'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('question') }}</strong>
+                                        <strong>{{ $errors->first('name') }}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
 
 
-                        <div class="form-group{{ $errors->has('A') ? ' has-error' : '' }}">
+                        <div class="form-group{{ $errors->has('code') ? ' has-error' : '' }}">
                             <label for="code" class="col-md-4 control-label">Course Code</label>
 
                             <div class="col-md-6">
-                                <input id="code" type="text" class="form-control" name="code" value="{{ old('A') }}" required>
+                                <input id="code" type="text" class="form-control" name="code" value="{{ old('code') }}" required>
 
-                                @if ($errors->has('A'))
+                                @if ($errors->has('code'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('A') }}</strong>
+                                        <strong>{{ $errors->first('code') }}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
+
+
 
 
 

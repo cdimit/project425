@@ -22,10 +22,12 @@ class QuestionController extends Controller
         'solution' => $req['solution'],
         'course_id' => $req['course_id'],
         'label' => $req['label'],
-        'admin_id'=>1,
+        'seconds' => $req['seconds'],
+        'chapter' => $req['chapter']
+
     ]);
 
     return redirect()->back();
   }
 }
-#'question','A','B','C','D','solution','course_id','label','isPic','admin_id','lock'
+#'question','A','B','C','D','solution','course_id','label','isPic','lock','seconds','chapter'

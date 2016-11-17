@@ -129,6 +129,37 @@
                         </div>
 
 
+                        <div class="form-group{{ $errors->has('seconds') ? ' has-error' : '' }}">
+                            <label for="seconds" class="col-md-4 control-label">Seconds</label>
+
+                            <div class="col-md-6">
+                                <input id="seconds" type="text" class="form-control" name="seconds" value="{{ old('seconds') }}" required>
+
+                                @if ($errors->has('seconds'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('seconds') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('chapter') ? ' has-error' : '' }}">
+                            <label for="chapter" class="col-md-4 control-label">Chapter</label>
+
+                            <div class="col-md-6">
+                                <input id="chapter" type="text" class="form-control" name="chapter" value="{{ old('chapter') }}" required>
+
+                                @if ($errors->has('chapter'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('chapter') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+
+                  
+
 
 
 
