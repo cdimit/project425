@@ -12,10 +12,8 @@
                         No questions available
                       @else
                         @foreach($questions as $que)
-                        <a href="/dashboard/question" class="btn btn-default">{{$que->course->code}}: {{$que->question}}</a>
+                        <a href="/question/{{$que->id}}" class="btn btn-default">{{$que->course->code}}: {{$que->question}}</a>
                         <br>
-
-
                         @endforeach
                       @endif
 
