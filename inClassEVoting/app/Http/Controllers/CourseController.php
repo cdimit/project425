@@ -31,4 +31,19 @@ class CourseController extends Controller
 
     return redirect()->back()->with('status', 'Course was successfully created!');
   }
+
+  public function editView($course_id){
+    $course=Course::find($course_id);
+    return view('dashboard.courses.edit')->with('course',$course);
+  }
+  public function edit($course_id, Request $req)
+  {
+    $course=Course::find($course_id);
+
+    $course->name = $req['name'];
+    $course->code = $req['code'];
+    $course->save();
+    return redirect('/dashboard')->with('status', 'Course was successfully edited!');
+
+  }
 }

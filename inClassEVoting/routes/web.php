@@ -33,4 +33,13 @@ Route::group(['middleware' => 'auth'], function(){
   Route::get('/dashboard/course/create', 'CourseController@createView');
   Route::post('/course/create', 'CourseController@create');
 
+  //Courses/edit
+  Route::get('/dashboard/{course_id}/edit', 'CourseController@editView');
+  Route::post('/dashboard/{course_id}/editt', 'CourseController@edit');
+
+
+  //home/question
+  Route::get('/question/{id}/answer1', 'HomeController@answer1View');
+  Route::get('/question/{id}/result1', 'HomeController@result1View');
+
 });
