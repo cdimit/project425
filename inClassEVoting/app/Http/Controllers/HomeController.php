@@ -70,4 +70,54 @@ class HomeController extends Controller
       return view('vote.result1')->with('question',$question)->with('answerstr',$answerstr);
     }
 
+
+        public function answer2View($id)
+        {
+            $question=Questions::findOrFail($id);
+
+            if ($question->lock){
+              return redirect('/');
+            }
+            return view('vote.answer2')->with('question', $question);
+
+        }
+
+        public function result2View($id)
+        {
+          $question=Questions::findOrFail($id);
+          if ($question->lock){
+            return redirect('/');
+          }
+          $answer= $_GET["answer2"];
+
+          if ($answer!=1 && $answer!=2 && $answer!=3 && $answer!=4  ) {
+            return redirect('/');
+          }
+          Answer2::create([
+            'question_id'=>$id,
+            'answer'=>$answer,
+
+          ]);
+          switch ($answer) {
+            case 1:
+              $answerstr = $question->A;
+              break;
+
+            case 2:
+              $answerstr = $question->B;
+              break;
+
+            case 3:
+              $answerstr = $question->C;
+              break;
+
+            case 4:
+              $answerstr = $question->D;
+              break;
+
+          }
+
+          return view('vote.result2')->with('question',$question)->with('answerstr',$answerstr);
+        }
+
 }

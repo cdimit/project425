@@ -17,6 +17,12 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index');
 
+//home/question
+Route::get('/question/{id}/answer1', 'HomeController@answer1View');
+Route::get('/question/{id}/result1', 'HomeController@result1View');
+Route::get('/question/{id}/answer2', 'HomeController@answer2View');
+Route::get('/question/{id}/result2', 'HomeController@result2View');
+
 
 Route::group(['middleware' => 'auth'], function(){
 
@@ -38,8 +44,6 @@ Route::group(['middleware' => 'auth'], function(){
   Route::post('/dashboard/{course_id}/editt', 'CourseController@edit');
 
 
-  //home/question
-  Route::get('/question/{id}/answer1', 'HomeController@answer1View');
-  Route::get('/question/{id}/result1', 'HomeController@result1View');
+
 
 });
