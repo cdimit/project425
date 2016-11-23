@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Questions;
+use App\Course;
 use Auth;
 
 class QuestionController extends Controller
@@ -18,6 +19,7 @@ class QuestionController extends Controller
   {
       return view('dashboard.questions.view');
   }
+
 
   public function create(Request $req)
   {
