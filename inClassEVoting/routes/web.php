@@ -30,7 +30,7 @@ Route::group(['middleware' => 'auth'], function(){
   Route::get('/dashboard', 'AdminController@home');
 
   //Questions
-  Route::get('/dashboard/question', 'QuestionController@view');
+  Route::get('/dashboard/{course_id}/question', 'QuestionController@view');
   Route::get('/dashboard/question/create','QuestionController@createView');
   Route::post('/question/create','QuestionController@create');
 

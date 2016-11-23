@@ -15,9 +15,11 @@ class QuestionController extends Controller
       return view('dashboard.questions.create')->with('courses', $courses);
   }
 
-  public function view()
+  public function view($course_id)
   {
-      return view('dashboard.questions.view');
+      $questions = Questions::where('course_id', $course_id)->get();
+
+      return view('dashboard.questions.view')->with('questions', $questions);
   }
 
 
