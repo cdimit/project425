@@ -39,7 +39,7 @@ class QuestionController extends Controller
 
     ]);
 
-    return redirect()->back()->with('status', 'Question was successfully created!');;
+    return redirect('/dashboard')->with('status', 'Question was successfully created!');
   }
 
   public function editView($question_id){

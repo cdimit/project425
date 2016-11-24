@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use App\Questions;
+use App\Course;
 
 class AdminController extends Controller
 {
@@ -32,7 +33,7 @@ class AdminController extends Controller
     $question->lock = '1';
     $question->save();
 
-    return redirect('/dashboard/'.$question->course_id.'/question');
+    return redirect('/dashboard/'.$question->course_id.'/question')->with('status', 'Question was successfully locked!');
   }
   public function deleteQuestion($question_id)
   {
@@ -40,7 +41,13 @@ class AdminController extends Controller
 
     $question->forceDelete();
 
-    return redirect('/dashboard/'.$question->course_id.'/question');
+    return redirect('/dashboard/'.$question->course_id.'/question')->with('status', 'Question was successfully deleted!');;
+  }
+  public function deleteCourse($course_id)
+  {
+    $course = Course::find($course_id);
+    $course->forceDelete();
+    return redirect('/dashboard')->with('status', 'Course was successfully deleted!');;
   }
 
 

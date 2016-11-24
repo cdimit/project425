@@ -8,6 +8,11 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
+                  @if (session('status'))
+                    <div class="alert alert-success">
+                      <strong>{{ session('status') }}</strong>
+                    </div>
+                  @endif
                   <div class="container">
                     <strong>Hello {{$user->first_name}}</strong>
                     <br>
@@ -22,6 +27,8 @@
                             <a href="/dashboard/<?= $user->courses[$i]->id ?>/edit" class="btn btn-default">Edit Course</a>
                             <a href="/dashboard/<?= $user->courses[$i]->id ?>/question" class="btn btn-default">View Questions </a>
                             <a href="/dashboard/<?= $user->courses[$i]->id ?>/stats" class="btn btn-default">View Stats </a>
+                            <a href="/delete/course/<?= $user->courses[$i]->id ?>" class="btn btn-danger">Delete </a>
+
                           </div>
                           <br><br>
                           @endfor

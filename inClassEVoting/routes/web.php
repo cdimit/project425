@@ -56,4 +56,6 @@ Route::group(['middleware' => 'auth'], function(){
   //Delete Question
   Route::get('delete/question/{question_id}', 'AdminController@deleteQuestion');
 
+  Route::get('delete/course/{course_id}','AdminController@deleteCourse');
+
 });

@@ -11,7 +11,11 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Questions - {{$questions->first()->course->code}}</div>
                 <div class="panel-body">
-
+                  @if (session('status'))
+                    <div class="alert alert-success">
+                      <strong>{{ session('status') }}</strong>
+                    </div>
+                  @endif
                   <table class=" table" id="example">
                             <thead>
                               <tr>
