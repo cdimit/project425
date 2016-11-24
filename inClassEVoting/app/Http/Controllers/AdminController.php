@@ -24,4 +24,14 @@ class AdminController extends Controller
 
     return redirect('/question/'.$question->id.'/answer1');
   }
+
+  public function lockQuestion($question_id)
+  {
+    $question = Questions::find($question_id);
+
+    $question->lock = '1';
+    $question->save();
+
+    return redirect('/dashboard');
+  }
 }

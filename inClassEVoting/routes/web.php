@@ -50,5 +50,8 @@ Route::group(['middleware' => 'auth'], function(){
   //Unlock
   Route::get('unlock/{question_id}', 'AdminController@unlockQuestion');
 
+  //Lock
+  Route::get('lock/{question_id}', 'AdminController@lockQuestion');
+
 
 });

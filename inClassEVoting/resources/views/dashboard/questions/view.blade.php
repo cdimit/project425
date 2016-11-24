@@ -47,7 +47,7 @@
                                       <a href="/unlock/{{$que->id}}" class="btn btn-success">Unlock</a>
 
                                       @else
-                                      <a href="/unlock/{{$que->id}}" class="btn btn-warning">Lock</a>
+                                      <a href="/lock/{{$que->id}}" class="btn btn-warning">Lock</a>
                                       @endif
 
                                   </td>
