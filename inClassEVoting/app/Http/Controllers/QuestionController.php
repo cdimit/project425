@@ -48,14 +48,22 @@ class QuestionController extends Controller
     return view('dashboard.questions.edit')->with('question',$question)->withCourses($courses);
   }
 
-  public function edit($course_id, Request $req)
+  public function edit($question_id, Request $req)
   {
-    $course=Course::find($course_id);
+    $que=Questions::find($question_id);
+    $que->question = $req['question'];
+    $que->A = $req['A'];
+    $que->B = $req['B'];
+    $que->C = $req['C'];
+    $que->D = $req['D'];
+    $que->solution = $req['solution'];
+    $que->course_id = $req['course_id'];
+    $que->label = $req['label'];
+    $que->seconds = $req['seconds'];
+    $que->chapter = $req['chapter'];
+    $que->save();
 
-    $course->name = $req['name'];
-    $course->code = $req['code'];
-    $course->save();
-    return redirect('/dashboard')->with('status', 'Course was successfully edited!');
+    return redirect("/dashboard/$que->course_id/question")->with('status', 'Question was successfully edited!');
 
   }
 

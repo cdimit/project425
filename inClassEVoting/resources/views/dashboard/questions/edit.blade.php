@@ -13,7 +13,7 @@
                     </div>
                   @endif
 
-                    <form class="form-horizontal" role="form" method="POST" action="dashboard/question/{{$question->id}}/edit">
+                    <form class="form-horizontal" role="form" method="POST" action="/dashboard/question/{{$question->id}}/edit">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('question') ? ' has-error' : '' }}">
@@ -178,7 +178,7 @@
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
-                                    Create
+                                    Edit
                                 </button>
                             </div>
                         </div>
