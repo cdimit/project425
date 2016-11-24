@@ -32,6 +32,6 @@ class AdminController extends Controller
     $question->lock = '1';
     $question->save();
 
-    return redirect('/dashboard');
+    return redirect('/dashboard/'.$question->course_id.'/question');
   }
 }
