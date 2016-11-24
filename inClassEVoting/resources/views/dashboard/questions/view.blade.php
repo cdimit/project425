@@ -41,7 +41,15 @@
                                   <td>{{ $que->label }}</td>
                                   <td>{{ $que->seconds  }}</td>
                                   <td><a href="/dashboard/question/{{$que->id}}/edit" class="btn btn-primary">Edit</a>
-                                      <a href="/unlock/{{$que->id}}" class="btn btn-warning">Unlock</a>
+
+                                      @if($que->lock==1)
+
+                                      <a href="/unlock/{{$que->id}}" class="btn btn-success">Unlock</a>
+
+                                      @else
+                                      <a href="/unlock/{{$que->id}}" class="btn btn-warning">Lock</a>
+                                      @endif
+
                                   </td>
                                </tr>
                             @endforeach
