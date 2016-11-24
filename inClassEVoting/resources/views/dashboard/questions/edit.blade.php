@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Create Question</div>
+                <div class="panel-heading">Edit Question</div>
                 <div class="panel-body">
                   @if (session('status'))
                     <div class="alert alert-success">
@@ -13,14 +13,14 @@
                     </div>
                   @endif
 
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/question/create') }}">
+                    <form class="form-horizontal" role="form" method="POST" action="dashboard/question/{{$question->id}}/edit">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('question') ? ' has-error' : '' }}">
                             <label for="question" class="col-md-4 control-label">Question</label>
 
                             <div class="col-md-6">
-                                <input id="question" type="text" class="form-control" name="question" value="{{ old('question') }}" required>
+                                <input id="question" type="text" class="form-control" name="question" value="{{ $question->question}}" required>
 
                                 @if ($errors->has('question'))
                                     <span class="help-block">
@@ -35,7 +35,7 @@
                             <label for="A" class="col-md-4 control-label">A</label>
 
                             <div class="col-md-6">
-                                <input id="A" type="text" class="form-control" name="A" value="{{ old('A') }}" required>
+                                <input id="A" type="text" class="form-control" name="A" value="{{ $question->A }}" required>
 
                                 @if ($errors->has('A'))
                                     <span class="help-block">
@@ -49,7 +49,7 @@
                             <label for="B" class="col-md-4 control-label">B</label>
 
                             <div class="col-md-6">
-                                <input id="B" type="text" class="form-control" name="B" value="{{ old('B') }}" required>
+                                <input id="B" type="text" class="form-control" name="B" value="{{ $question->B }}" required>
 
                                 @if ($errors->has('B'))
                                     <span class="help-block">
@@ -63,7 +63,7 @@
                             <label for="C" class="col-md-4 control-label">C</label>
 
                             <div class="col-md-6">
-                                <input id="C" type="text" class="form-control" name="C" value="{{ old('C') }}" required>
+                                <input id="C" type="text" class="form-control" name="C" value="{{ $question->C }}" required>
 
                                 @if ($errors->has('C'))
                                     <span class="help-block">
@@ -78,7 +78,7 @@
                             <label for="D" class="col-md-4 control-label">D</label>
 
                             <div class="col-md-6">
-                                <input id="D" type="text" class="form-control" name="D" value="{{ old('D') }}" required>
+                                <input id="D" type="text" class="form-control" name="D" value="{{ $question->D }}" required>
 
                                 @if ($errors->has('D'))
                                     <span class="help-block">
@@ -92,10 +92,11 @@
                             <label for="solution" class="col-md-4 control-label">Solution</label>
 
                             <div class="col-md-6">
-                                <input type="radio" name="solution" value="A"> A
-                                <input type="radio" name="solution" value="B"> B
-                                <input type="radio" name="solution" value="C"> C
-                                <input type="radio" name="solution" value="D"> D
+
+                                <input type="radio" name="solution" value="A" @if($question->solution=="A") checked @endif> A
+                                <input type="radio" name="solution" value="B" @if($question->solution=="B") checked @endif> B
+                                <input type="radio" name="solution" value="C" @if($question->solution=="C") checked @endif> C
+                                <input type="radio" name="solution" value="D" @if($question->solution=="D") checked @endif> D
                                 @if ($errors->has('solution'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('solution') }}</strong>
@@ -112,7 +113,7 @@
                             <div class="col-md-6">
                               <select name="course_id">
                                 @foreach($courses as $course)
-                                <option value="{{$course->id}}">{{$course->name}} - {{$course->code}}</option>
+                                <option value="{{$course->id}}" @if($course->id==$question->course_id) selected @endif>{{$course->name}} - {{$course->code}}</option>
                                 @endforeach
                               </select>
                                 @if ($errors->has('course_id'))
@@ -129,7 +130,7 @@
                             <label for="label" class="col-md-4 control-label">Label</label>
 
                             <div class="col-md-6">
-                                <input id="label" type="text" class="form-control" name="label" value="{{ old('label') }}" required>
+                                <input id="label" type="text" class="form-control" name="label" value="{{ $question->label }}" required>
 
                                 @if ($errors->has('label'))
                                     <span class="help-block">
@@ -144,7 +145,7 @@
                             <label for="seconds" class="col-md-4 control-label">Seconds</label>
 
                             <div class="col-md-6">
-                                <input id="seconds" type="text" class="form-control" name="seconds" value="{{ old('seconds') }}" required>
+                                <input id="seconds" type="text" class="form-control" name="seconds" value="{{ $question->seconds }}" required>
 
                                 @if ($errors->has('seconds'))
                                     <span class="help-block">
@@ -158,7 +159,7 @@
                             <label for="chapter" class="col-md-4 control-label">Chapter</label>
 
                             <div class="col-md-6">
-                                <input id="chapter" type="text" class="form-control" name="chapter" value="{{ old('chapter') }}" required>
+                                <input id="chapter" type="text" class="form-control" name="chapter" value="{{ $question->chapter }}" required>
 
                                 @if ($errors->has('chapter'))
                                     <span class="help-block">

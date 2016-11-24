@@ -41,5 +41,23 @@ class QuestionController extends Controller
 
     return redirect()->back()->with('status', 'Question was successfully created!');;
   }
+
+  public function editView($question_id){
+    $question=Questions::find($question_id);
+    $courses = Course::all();
+    return view('dashboard.questions.edit')->with('question',$question)->withCourses($courses);
+  }
+
+  public function edit($course_id, Request $req)
+  {
+    $course=Course::find($course_id);
+
+    $course->name = $req['name'];
+    $course->code = $req['code'];
+    $course->save();
+    return redirect('/dashboard')->with('status', 'Course was successfully edited!');
+
+  }
+
 }
 #'question','A','B','C','D','solution','course_id','label','isPic','lock','seconds','chapter'

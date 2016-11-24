@@ -34,6 +34,10 @@ Route::group(['middleware' => 'auth'], function(){
   Route::get('/dashboard/question/create','QuestionController@createView');
   Route::post('/question/create','QuestionController@create');
 
+  //Question/edit
+  Route::get('/dashboard/question/{question_id}/edit', 'QuestionController@editView');
+  Route::post('/dashboard/question/{question_id}/edit', 'QuestionController@edit');
+
   //Courses
   Route::get('/dashboard/course', 'CourseController@view');
   Route::get('/dashboard/course/create', 'CourseController@createView');
@@ -43,7 +47,8 @@ Route::group(['middleware' => 'auth'], function(){
   Route::get('/dashboard/{course_id}/edit', 'CourseController@editView');
   Route::post('/dashboard/{course_id}/editt', 'CourseController@edit');
 
-
+  //Unlock
+  Route::get('unlock/{question_id}', 'AdminController@unlockQuestion');
 
 
 });
