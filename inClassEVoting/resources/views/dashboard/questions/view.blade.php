@@ -50,6 +50,9 @@
                                       <a href="/lock/{{$que->id}}" class="btn btn-warning">Lock</a>
                                       @endif
 
+                                      <a href="/delete/question/{{$que->id}}" class="btn btn-danger">Delete</a>
+
+
                                   </td>
                                </tr>
                             @endforeach

@@ -34,4 +34,14 @@ class AdminController extends Controller
 
     return redirect('/dashboard/'.$question->course_id.'/question');
   }
+  public function deleteQuestion($question_id)
+  {
+    $question = Questions::find($question_id);
+
+    $question->forceDelete();
+
+    return redirect('/dashboard/'.$question->course_id.'/question');
+  }
+
+
 }

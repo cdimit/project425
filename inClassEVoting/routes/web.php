@@ -53,5 +53,7 @@ Route::group(['middleware' => 'auth'], function(){
   //Lock
   Route::get('lock/{question_id}', 'AdminController@lockQuestion');
 
+  //Delete Question
+  Route::get('delete/question/{question_id}', 'AdminController@deleteQuestion');
 
 });
