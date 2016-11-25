@@ -3,9 +3,13 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use SoftDeletes;
 
 class Answer2 extends Model
 {
+
+
+  protected $dates = ['deleted_at'];
 
   protected $table = "answer2";
 

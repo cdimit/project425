@@ -3,9 +3,14 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use SoftDeletes;
 
 class Course extends Model
 {
+
+
+  protected $dates = ['deleted_at'];
+
   /**
    * The attributes that are mass assignable.
    *

@@ -28,7 +28,7 @@ class CreateQuestionTable extends Migration
           $table->integer('seconds')->default(60);
           $table->integer('chapter');
           $table->timestamps();
-          $table->foreign('course_id')->references('id')->on('course');
+          $table->foreign('course_id')->references('id')->on('course')->onDelete('cascade');
       });
 
 

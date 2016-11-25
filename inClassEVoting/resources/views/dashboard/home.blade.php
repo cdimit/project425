@@ -17,7 +17,9 @@
                     <strong>Hello {{$user->first_name}}</strong>
                     <br>
                     <a href="/dashboard/course/create" class="btn btn-default">Create Course</a>
+                    @if($user->courses->count()>0)
                     <a href="/dashboard/question/create" class="btn btn-default">Create Question</a><br>
+                    @endif
 <hr>
 
                         @for ($i=0; $i < $user->courses->count() ; $i++)

@@ -39,14 +39,16 @@ class AdminController extends Controller
   {
     $question = Questions::find($question_id);
 
-    $question->forceDelete();
+    $question->delete();
 
     return redirect('/dashboard/'.$question->course_id.'/question')->with('status', 'Question was successfully deleted!');;
   }
   public function deleteCourse($course_id)
   {
     $course = Course::find($course_id);
-    $course->forceDelete();
+
+    $course->delete();
+
     return redirect('/dashboard')->with('status', 'Course was successfully deleted!');;
   }
 
