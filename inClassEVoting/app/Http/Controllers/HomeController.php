@@ -120,4 +120,14 @@ class HomeController extends Controller
           return view('vote.result2')->with('question',$question)->with('answerstr',$answerstr);
         }
 
+        public function chartResults1($question_id)
+        {
+          $a = Answer1::where('question_id', $question_id)->where('answer', 1)->get()->count();
+          $b = Answer1::where('question_id', $question_id)->where('answer', 2)->get()->count();
+          $c = Answer1::where('question_id', $question_id)->where('answer', 3)->get()->count();
+          $d = Answer1::where('question_id', $question_id)->where('answer', 4)->get()->count();
+
+          echo $a.' '.$b.' '.$c.' '.$d;
+        }
+
 }

@@ -7,7 +7,7 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading">Questions - {{$questions->first()->course->code}}</div>
                 <div class="panel-body">
@@ -25,6 +25,7 @@
                                   <th>B</th>
                                   <th>C</th>
                                   <th>D</th>
+                                  <th>Solution</th>
                                   <th>Label</th>
                                   <th>Seconds</th>
                                   <th>Options</th>
@@ -34,7 +35,6 @@
                            <tbody>
 
                            @foreach($questions as $que)
-
                                <tr>
                                   <td>{{ $que->chapter }}</td>
                                   <td>{{ $que->question }}</td>
@@ -42,6 +42,7 @@
                                   <td>{{ $que->B }}</td>
                                   <td>{{ $que->C }}</td>
                                   <td>{{ $que->D }}</td>
+                                  <td>{{ $que->solution }}</td>
                                   <td>{{ $que->label }}</td>
                                   <td>{{ $que->seconds  }}</td>
                                   <td><a href="/dashboard/question/{{$que->id}}/edit" class="btn btn-primary">Edit</a>

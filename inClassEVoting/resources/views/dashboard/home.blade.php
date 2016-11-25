@@ -23,7 +23,6 @@
 <hr>
 
                         @for ($i=0; $i < $user->courses->count() ; $i++)
-
                           <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo<?=$i?>"><?= $user->courses[$i]->code ?> : <?= $user->courses[$i]->name ?></button>
                           <div id="demo<?=$i?>" class="collapse">
                             <a href="/dashboard/<?= $user->courses[$i]->id ?>/edit" class="btn btn-default">Edit Course</a>
