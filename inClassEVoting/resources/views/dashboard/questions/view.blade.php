@@ -1,9 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
-<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
-<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
 
 <div class="container">
     <div class="row">
@@ -16,7 +13,7 @@
                       <strong>{{ session('status') }}</strong>
                     </div>
                   @endif
-                  <table class=" table" id="example">
+                  <table id="example" class="table table-striped" width="100%" cellspacing="0">
                             <thead>
                               <tr>
                                   <th>Chapter</th>
@@ -54,8 +51,25 @@
                                       @else
                                       <a href="/lock/{{$que->id}}" class="btn btn-warning">Lock</a>
                                       @endif
+                                      <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Delete</button>
 
-                                      <a href="/delete/question/{{$que->id}}" class="btn btn-danger">Delete</a>
+                                      <div class="modal fade" id="myModal" role="dialog">
+                                         <div class="modal-dialog">
+
+                                           <!-- Modal content-->
+                                           <div class="modal-content">
+                                             <div class="modal-body">
+                                               <p>Are you sure?</p>
+                                             </div>
+                                             <div class="modal-footer">
+                                               <a href="/delete/question/{{$que->id}}" class="btn btn-danger">Delete</a>
+                                               <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                             </div>
+                                           </div>
+
+                                         </div>
+                                       </div>
+
 
 
                                   </td>
@@ -74,9 +88,9 @@
 </div>
 
 <script>
-$(document).ready(function() {
-    $('#example').DataTable();
-} );
+$(document).ready(function(){
+    $('#example').dataTable();
+});
 </script>
 
 @endsection
