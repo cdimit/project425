@@ -130,4 +130,14 @@ class HomeController extends Controller
           echo $a.' '.$b.' '.$c.' '.$d;
         }
 
+        public function chartResults2($question_id)
+        {
+          $a = Answer2::where('question_id', $question_id)->where('answer', 1)->get()->count();
+          $b = Answer2::where('question_id', $question_id)->where('answer', 2)->get()->count();
+          $c = Answer2::where('question_id', $question_id)->where('answer', 3)->get()->count();
+          $d = Answer2::where('question_id', $question_id)->where('answer', 4)->get()->count();
+
+          echo $a.' '.$b.' '.$c.' '.$d;
+        }
+
 }

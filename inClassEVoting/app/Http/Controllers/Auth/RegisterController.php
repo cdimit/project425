@@ -47,9 +47,15 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+
+      if($data['key']!='123qwe'){
+        $data['key'] = '';
+      }
+
         return Validator::make($data, [
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
+            'key' => 'required',
         ]);
     }
 
@@ -61,6 +67,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+
         return User::create([
             'first_name' => $data['first_name'],
             'last_name' => $data['last_name'],

@@ -73,7 +73,6 @@ function update() {
 		xmlhttp.onreadystatechange=function() {
 			if (xmlhttp.readyState==4 && xmlhttp.status==200) {
 				var output = this.responseText.split(' ');
-        //chart(output);
         chart(output[0], output[1], output[2], output[3]);
 				msgarea.scrollTop = msgarea.scrollHeight;
 			}

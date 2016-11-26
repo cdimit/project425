@@ -24,6 +24,7 @@ Route::get('/question/{id}/answer2', 'HomeController@answer2View');
 Route::get('/question/{id}/result2', 'HomeController@result2View');
 
 Route::get('/chart_results1/{question_id}', 'HomeController@chartResults1');
+Route::get('/chart_results2/{question_id}', 'HomeController@chartResults2');
 
 Route::group(['middleware' => 'auth'], function(){
 

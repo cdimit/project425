@@ -7,6 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Register</div>
                 <div class="panel-body">
+
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
                         {{ csrf_field() }}
 
@@ -71,6 +72,20 @@
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('key') ? ' has-error' : '' }}">
+                            <label for="key" class="col-md-4 control-label">Key</label>
+
+                            <div class="col-md-6">
+                                <input id="key" type="password" class="form-control" name="key" value="" required>
+
+                                @if ($errors->has('key'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('key') }}</strong>
+                                    </span>
+                                @endif
                             </div>
                         </div>
 
