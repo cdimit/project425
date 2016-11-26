@@ -10,9 +10,34 @@
                 <div class="panel-heading">{{$question->course->code}} : {{$question->course->name}}</div>
 
                 <div class="panel-body">
+
+                  <?php
+                  $ansstr = "None";
+                  switch ($question->solution) {
+                    case 'A':
+                      $ansstr = $question->A;
+                      break;
+
+                    case 'B':
+                      $ansstr = $question->B;
+                      break;
+
+                    case 'C':
+                      $ansstr = $question->C;
+                      break;
+
+                    case 'D':
+                      $ansstr = $question->D;
+                      break;
+
+                  }
+                  ?>
+                  <h1>Answer: {{$ansstr}}</h1>
+
+
                   <canvas id="myChart"></canvas>
-                    <br>
-                    <a href="/dashboard/{{$question->course_id}}/question" class="btn btn-default">Finish</a>
+                    <br><br>
+                    <a href="/dashboard" class="btn btn-primary btn-block">Finish</a>
 
 
                 </div>

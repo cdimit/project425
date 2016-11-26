@@ -11,8 +11,8 @@
                 <div class="panel-body">
                   <canvas id="myChart"></canvas>
 
-                    <br>
-                    <a href="/admin/question/{{$question->id}}/answer2" class="btn btn-default">Next</a>
+                    <br><br>
+                    <a href="/admin/question/{{$question->id}}/answer2" class="btn btn-primary btn-block">Next</a>
 
 
                 </div>

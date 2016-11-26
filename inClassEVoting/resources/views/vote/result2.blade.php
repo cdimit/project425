@@ -11,10 +11,11 @@
 
                 <div class="panel-body">
                   <canvas id="myChart"></canvas>
-                    Your answer is {{$answerstr}}
+                  <br><br>
+                  Your answer is {{$answerstr}}
 
-                    <br>
-                    <a href="/" class="btn btn-default">Finish</a>
+                    <br><br>
+                    <a href="/" class="btn btn-primary btn-block">Finish</a>
 
 
                 </div>
