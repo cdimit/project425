@@ -28,8 +28,24 @@
                             <a href="/dashboard/<?= $user->courses[$i]->id ?>/edit" class="btn btn-default">Edit Course</a>
                             <a href="/dashboard/<?= $user->courses[$i]->id ?>/question" class="btn btn-default">View Questions </a>
                             <a href="/dashboard/<?= $user->courses[$i]->id ?>/stats" class="btn btn-default">View Stats </a>
-                            <a href="/delete/course/<?= $user->courses[$i]->id ?>" class="btn btn-danger">Delete </a>
+                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Delete</button>
 
+                            <div class="modal fade" id="myModal" role="dialog">
+                               <div class="modal-dialog">
+
+                                 <!-- Modal content-->
+                                 <div class="modal-content">
+                                   <div class="modal-body">
+                                     <p>Are you sure?</p>
+                                   </div>
+                                   <div class="modal-footer">
+                                     <a href="/delete/course/<?= $user->courses[$i]->id ?>" class="btn btn-danger">Yes</a>
+                                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                   </div>
+                                 </div>
+
+                               </div>
+                             </div>
                           </div>
                           <br><br>
                           @endfor
