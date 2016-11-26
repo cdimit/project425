@@ -28,6 +28,17 @@ Route::get('/chart_results2/{question_id}', 'HomeController@chartResults2');
 
 Route::group(['middleware' => 'auth'], function(){
 
+  //admin/question
+  Route::get('/admin/question/{id}/answer1', 'AdminController@answer1View');
+  Route::get('/admin/question/{id}/result1', 'AdminController@result1View');
+  Route::get('/admin/question/{id}/answer2', 'AdminController@answer2View');
+  Route::get('/admin/question/{id}/result2', 'AdminController@result2View');
+
+  Route::get('/admin/chart_results1/{question_id}', 'AdminController@chartResults1');
+  Route::get('/admin/chart_results2/{question_id}', 'AdminController@chartResults2');
+
+
+
   //dashboard
   Route::get('/dashboard', 'AdminController@home');
 
