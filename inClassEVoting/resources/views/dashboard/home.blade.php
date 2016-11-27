@@ -28,9 +28,9 @@
                             <a href="/dashboard/<?= $user->courses[$i]->id ?>/edit" class="btn btn-default">Edit Course</a>
                             <a href="/dashboard/<?= $user->courses[$i]->id ?>/question" class="btn btn-default">View Questions </a>
                             <a href="/dashboard/<?= $user->courses[$i]->id ?>/stats" class="btn btn-default">View Stats </a>
-                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Delete</button>
+                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal{{$user->courses[$i]->id}}">Delete</button>
 
-                            <div class="modal fade" id="myModal" role="dialog">
+                            <div class="modal fade" id="myModal{{$user->courses[$i]->id}}" role="dialog">
                                <div class="modal-dialog">
 
                                  <!-- Modal content-->

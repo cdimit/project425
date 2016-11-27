@@ -51,9 +51,9 @@
                                       @else
                                       <a href="/lock/{{$que->id}}" class="btn btn-warning">Lock</a>
                                       @endif
-                                      <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Delete</button>
+                                      <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal{{$que->id}}">Delete</button>
 
-                                      <div class="modal fade" id="myModal" role="dialog">
+                                      <div class="modal fade" id="myModal{{$que->id}}" role="dialog">
                                          <div class="modal-dialog">
 
                                            <!-- Modal content-->
