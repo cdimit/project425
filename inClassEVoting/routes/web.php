@@ -70,4 +70,9 @@ Route::group(['middleware' => 'auth'], function(){
   Route::get('delete/question/{question_id}', 'AdminController@deleteQuestion');
   Route::get('delete/course/{course_id}','AdminController@deleteCourse');
 
+
+
+  //stats
+  Route::get('dashboard/{courses_id}/stats','CourseController@viewStats');
+
 });

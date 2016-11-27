@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Course;
 use Auth;
+use App\Answer1;
+use App\Answer2;
+
 
 class CourseController extends Controller
 {
@@ -45,6 +48,18 @@ class CourseController extends Controller
     $course->code = $req['code'];
     $course->save();
     return redirect('/dashboard')->with('status', 'Course was successfully edited!');
+
+  }
+
+
+
+
+  public function viewStats($course_id)
+  {
+    $course=Course::find($course_id);
+    $answer1=Answer1::all();
+    $answer2=Answer2::all();
+    return view('dashboard.courses.viewStats')->with('course',$course)->with('answer1',$answer1)->with('answer2',$answer2);
 
   }
 }
