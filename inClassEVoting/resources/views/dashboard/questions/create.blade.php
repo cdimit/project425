@@ -20,8 +20,7 @@
                             <label for="question" class="col-md-4 control-label">Question</label>
 
                             <div class="col-md-6">
-                                <input id="question" type="text" class="form-control" name="question" value="{{ old('question') }}" required>
-
+                              <textarea rows="2" cols="50" id="question" type="text" class="form-control" name="question" style="resize:none;" required>{{ old('question') }}</textarea>
                                 @if ($errors->has('question'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('question') }}</strong>
@@ -35,7 +34,7 @@
                             <label for="A" class="col-md-4 control-label">A</label>
 
                             <div class="col-md-6">
-                                <input id="A" type="text" class="form-control" name="A" value="{{ old('A') }}" required>
+                              <textarea rows="2" cols="50" id="A" type="text" class="form-control" name="A" style="resize:none;" required>{{ old('A') }}</textarea>
 
                                 @if ($errors->has('A'))
                                     <span class="help-block">
@@ -49,8 +48,7 @@
                             <label for="B" class="col-md-4 control-label">B</label>
 
                             <div class="col-md-6">
-                                <input id="B" type="text" class="form-control" name="B" value="{{ old('B') }}" required>
-
+                              <textarea rows="2" cols="50" id="B" type="text" class="form-control" name="B" style="resize:none;" required>{{ old('B') }}</textarea>
                                 @if ($errors->has('B'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('B') }}</strong>
@@ -63,8 +61,7 @@
                             <label for="C" class="col-md-4 control-label">C</label>
 
                             <div class="col-md-6">
-                                <input id="C" type="text" class="form-control" name="C" value="{{ old('C') }}" required>
-
+                              <textarea rows="2" cols="50" id="C" type="text" class="form-control" name="C" style="resize:none;" required>{{ old('C') }}</textarea>
                                 @if ($errors->has('C'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('C') }}</strong>
@@ -78,8 +75,7 @@
                             <label for="D" class="col-md-4 control-label">D</label>
 
                             <div class="col-md-6">
-                                <input id="D" type="text" class="form-control" name="D" value="{{ old('D') }}" required>
-
+                              <textarea rows="2" cols="50" id="D" type="text" class="form-control" name="D" style="resize:none;" required>{{ old('D') }}</textarea>
                                 @if ($errors->has('D'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('D') }}</strong>
@@ -129,8 +125,7 @@
                             <label for="label" class="col-md-4 control-label">Label</label>
 
                             <div class="col-md-6">
-                                <input id="label" type="text" class="form-control" name="label" value="{{ old('label') }}" required>
-
+                              <textarea rows="2" cols="50" id="label" type="text" class="form-control" name="label" style="resize:none;" required>{{ old('label') }}</textarea>
                                 @if ($errors->has('label'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('label') }}</strong>

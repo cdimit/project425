@@ -60,17 +60,16 @@ var myChart = new Chart(ctx, {
             data: [a,b,c,d],
             backgroundColor: [
                 "#228b22",
-                "#8b0000",
+                "#e00000",
                 "#ffff00",
                 "#1e90ff"
 
             ],
             hoverBackgroundColor: [
-                "#228b22",
-                "#8b0000",
-                "#ffff00",
-                "#1e90ff"
-
+                "#228022",
+                "#cb0000",
+                "#ffe000",
+                "#1e90e0"
             ]
         }]
     },

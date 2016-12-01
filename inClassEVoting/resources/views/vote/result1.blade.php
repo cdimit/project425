@@ -11,7 +11,7 @@
                 <div class="panel-body">
                   <canvas id="myChart"></canvas>
                     <br><br>
-                    Your answer is {{$answerstr}}
+                    Your answer is: <strong>{{$answerstr}}</strong>
 
                     <br><br>
                     <a href="/question/{{$question->id}}/answer2" class="btn btn-primary btn-block">Next</a>
@@ -37,16 +37,16 @@ var myChart = new Chart(ctx, {
             data: [a,b,c,d],
             backgroundColor: [
                 "#228b22",
-                "#8b0000",
+                "#e00000",
                 "#ffff00",
                 "#1e90ff"
 
             ],
             hoverBackgroundColor: [
-                "#228b22",
-                "#8b0000",
-                "#ffff00",
-                "#1e90ff"
+                "#228022",
+                "#cb0000",
+                "#ffe000",
+                "#1e90e0"
 
             ]
         }]
