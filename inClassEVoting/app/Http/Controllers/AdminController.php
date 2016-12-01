@@ -18,7 +18,7 @@ class AdminController extends Controller
 
   public function unlockQuestion($question_id)
   {
-    $question = Questions::find($question_id);
+    $question = Questions::findOrFail($question_id);
 
     $question->lock = '0';
     $question->save();
@@ -28,7 +28,7 @@ class AdminController extends Controller
 
   public function lockQuestion($question_id)
   {
-    $question = Questions::find($question_id);
+    $question = Questions::findOrFail($question_id);
 
     $question->lock = '1';
     $question->save();
@@ -37,7 +37,7 @@ class AdminController extends Controller
   }
   public function deleteQuestion($question_id)
   {
-    $question = Questions::find($question_id);
+    $question = Questions::findOrFail($question_id);
 
     $question->delete();
 
@@ -45,7 +45,7 @@ class AdminController extends Controller
   }
   public function deleteCourse($course_id)
   {
-    $course = Course::find($course_id);
+    $course = Course::findOrFail($course_id);
 
     $course->delete();
 

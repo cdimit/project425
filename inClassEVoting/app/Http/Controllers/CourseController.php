@@ -36,13 +36,13 @@ class CourseController extends Controller
   }
 
   public function editView($course_id){
-    $course=Course::find($course_id);
+    $course=Course::findOrFail($course_id);
     return view('dashboard.courses.edit')->with('course',$course);
   }
 
   public function edit($course_id, Request $req)
   {
-    $course=Course::find($course_id);
+    $course=Course::findOrFail($course_id);
 
     $course->name = $req['name'];
     $course->code = $req['code'];
@@ -56,7 +56,7 @@ class CourseController extends Controller
 
   public function viewStats($course_id)
   {
-    $course=Course::find($course_id);
+    $course=Course::findOrFail($course_id);
     $answer1=Answer1::all();
     $answer2=Answer2::all();
     return view('dashboard.courses.viewStats')->with('course',$course)->with('answer1',$answer1)->with('answer2',$answer2);

@@ -88,10 +88,10 @@
                             <label for="solution" class="col-md-4 control-label">Solution</label>
 
                             <div class="col-md-6">
-                                <input type="radio" name="solution" value="A"> A
-                                <input type="radio" name="solution" value="B"> B
-                                <input type="radio" name="solution" value="C"> C
-                                <input type="radio" name="solution" value="D"> D
+                                <label><input type="radio" name="solution" value="A"> A</label>
+                                <label><input type="radio" name="solution" value="B"> B</label>
+                                <label><input type="radio" name="solution" value="C"> C</label>
+                                <label><input type="radio" name="solution" value="D"> D</label>
                                 @if ($errors->has('solution'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('solution') }}</strong>

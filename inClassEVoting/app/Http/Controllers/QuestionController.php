@@ -43,14 +43,14 @@ class QuestionController extends Controller
   }
 
   public function editView($question_id){
-    $question=Questions::find($question_id);
+    $question=Questions::findOrFail($question_id);
     $courses = Course::all();
     return view('dashboard.questions.edit')->with('question',$question)->withCourses($courses);
   }
 
   public function edit($question_id, Request $req)
   {
-    $que=Questions::find($question_id);
+    $que=Questions::findOrFail($question_id);
     $que->question = $req['question'];
     $que->A = $req['A'];
     $que->B = $req['B'];

@@ -20,7 +20,7 @@
                             <label for="question" class="col-md-4 control-label">Question</label>
 
                             <div class="col-md-6">
-                                <input id="question" type="text" class="form-control" name="question" value="{{ $question->question}}" required>
+                                <textarea rows="2" cols="50" id="question" type="text" class="form-control" name="question" style="resize:none;" required>{{ $question->question}}</textarea>
 
                                 @if ($errors->has('question'))
                                     <span class="help-block">
@@ -35,7 +35,7 @@
                             <label for="A" class="col-md-4 control-label">A</label>
 
                             <div class="col-md-6">
-                                <input id="A" type="text" class="form-control" name="A" value="{{ $question->A }}" required>
+                                <textarea rows="2" cols="50" id="A" type="text" class="form-control" name="A" style="resize:none;" required>{{ $question->A }}</textarea>
 
                                 @if ($errors->has('A'))
                                     <span class="help-block">
@@ -49,7 +49,7 @@
                             <label for="B" class="col-md-4 control-label">B</label>
 
                             <div class="col-md-6">
-                                <input id="B" type="text" class="form-control" name="B" value="{{ $question->B }}" required>
+                                <textarea rows="2" cols="50" id="B" type="text" class="form-control" name="B" style="resize:none;" required>{{ $question->B }}</textarea>
 
                                 @if ($errors->has('B'))
                                     <span class="help-block">
@@ -63,7 +63,8 @@
                             <label for="C" class="col-md-4 control-label">C</label>
 
                             <div class="col-md-6">
-                                <input id="C" type="text" class="form-control" name="C" value="{{ $question->C }}" required>
+
+                                <textarea rows="2" cols="50" id="C" type="text" class="form-control" name="C" style="resize:none;" required>{{ $question->C }}</textarea>
 
                                 @if ($errors->has('C'))
                                     <span class="help-block">
@@ -78,7 +79,8 @@
                             <label for="D" class="col-md-4 control-label">D</label>
 
                             <div class="col-md-6">
-                                <input id="D" type="text" class="form-control" name="D" value="{{ $question->D }}" required>
+
+                                <textarea rows="2" cols="50" id="D" type="text" class="form-control" name="D" style="resize:none;" required>{{ $question->D }}</textarea>
 
                                 @if ($errors->has('D'))
                                     <span class="help-block">
@@ -93,10 +95,10 @@
 
                             <div class="col-md-6">
 
-                                <input type="radio" name="solution" value="A" @if($question->solution=="A") checked @endif> A
-                                <input type="radio" name="solution" value="B" @if($question->solution=="B") checked @endif> B
-                                <input type="radio" name="solution" value="C" @if($question->solution=="C") checked @endif> C
-                                <input type="radio" name="solution" value="D" @if($question->solution=="D") checked @endif> D
+                                <label><input type="radio" name="solution" value="A" @if($question->solution=="A") checked @endif> A</label>
+                                <label><input type="radio" name="solution" value="B" @if($question->solution=="B") checked @endif> B</label>
+                                <label><input type="radio" name="solution" value="C" @if($question->solution=="C") checked @endif> C</label>
+                                <label><input type="radio" name="solution" value="D" @if($question->solution=="D") checked @endif> D</label>
                                 @if ($errors->has('solution'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('solution') }}</strong>
@@ -130,7 +132,8 @@
                             <label for="label" class="col-md-4 control-label">Label</label>
 
                             <div class="col-md-6">
-                                <input id="label" type="text" class="form-control" name="label" value="{{ $question->label }}" required>
+
+                                <textarea rows="2" cols="50" id="label" type="text" class="form-control" name="label" style="resize:none;" required>{{ $question->label }}</textarea>
 
                                 @if ($errors->has('label'))
                                     <span class="help-block">

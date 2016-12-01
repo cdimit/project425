@@ -19,7 +19,7 @@
                             <label for="name" class="col-md-4 control-label">Course Name</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required>
+                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="Τεχνολογίες Διαδικτύου" required>
 
                                 @if ($errors->has('name'))
                                     <span class="help-block">
@@ -34,7 +34,7 @@
                             <label for="code" class="col-md-4 control-label">Course Code</label>
 
                             <div class="col-md-6">
-                                <input id="code" type="text" class="form-control" name="code" value="{{ old('code') }}" required>
+                                <input id="code" type="text" class="form-control" name="code" value="{{ old('code') }}" placeholder="ΕΠΛ 425" required>
 
                                 @if ($errors->has('code'))
                                     <span class="help-block">
