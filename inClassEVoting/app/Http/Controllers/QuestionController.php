@@ -17,7 +17,7 @@ class QuestionController extends Controller
 
   public function view($course_id)
   {
-      $questions = Questions::where('course_id', $course_id)->get();
+      $questions = Questions::where('course_id', $course_id)->get()->sortBy('chapter');
 
       return view('dashboard.questions.view')->with('questions', $questions);
   }
