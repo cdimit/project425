@@ -48,14 +48,12 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
 
-      if($data['key']!='cs2016'){
-        $data['key'] = '';
-      }
+      $key = env('REGISTER_KEY');
 
         return Validator::make($data, [
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
-            'key' => 'required',
+            'key' => 'required|same:'.$key,
         ]);
     }
 
