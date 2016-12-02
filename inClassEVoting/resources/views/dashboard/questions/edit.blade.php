@@ -127,23 +127,6 @@
                         </div>
 
 
-
-                        <div class="form-group{{ $errors->has('label') ? ' has-error' : '' }}">
-                            <label for="label" class="col-md-4 control-label">Label</label>
-
-                            <div class="col-md-6">
-
-                                <textarea rows="2" cols="50" id="label" type="text" class="form-control" name="label" style="resize:none;" required>{{ $question->label }}</textarea>
-
-                                @if ($errors->has('label'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('label') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-
                         <div class="form-group{{ $errors->has('seconds') ? ' has-error' : '' }}">
                             <label for="seconds" class="col-md-4 control-label">Seconds</label>
 

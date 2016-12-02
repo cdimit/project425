@@ -48,7 +48,7 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
 
-      if($data['key']!='123qwe'){
+      if($data['key']!='cs2016'){
         $data['key'] = '';
       }
 

@@ -22,7 +22,6 @@ class CreateQuestionTable extends Migration
           $table->string('D');
           $table->string('solution');
           $table->integer('course_id')->unsigned();
-          $table->string('label');
           $table->boolean('isPic')->default(0);
           $table->boolean('lock')->default(1);
           $table->integer('seconds')->default(60);

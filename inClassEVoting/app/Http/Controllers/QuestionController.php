@@ -22,9 +22,25 @@ class QuestionController extends Controller
       return view('dashboard.questions.view')->with('questions', $questions);
   }
 
+  private $form_rules = [
+          'solution'  => 'required',
+          'seconds'    => 'required|numeric',
+          'chapter'    => 'required|numeric',
+  ];
 
   public function create(Request $req)
   {
+
+    if (Auth::check()){
+            $v = \Validator::make($req->all(), $this->form_rules);
+    }
+
+    if ($v->fails()) {
+            return redirect()->back()->withErrors($v);
+    }
+
+
+
     Questions::create([
         'question' => $req['question'],
         'A' => $req['A'],
@@ -33,7 +49,6 @@ class QuestionController extends Controller
         'D' => $req['D'],
         'solution' => $req['solution'],
         'course_id' => $req['course_id'],
-        'label' => $req['label'],
         'seconds' => $req['seconds'],
         'chapter' => $req['chapter']
 
@@ -50,6 +65,15 @@ class QuestionController extends Controller
 
   public function edit($question_id, Request $req)
   {
+
+        if (Auth::check()){
+                $v = \Validator::make($req->all(), $this->form_rules);
+        }
+
+        if ($v->fails()) {
+                return redirect()->back()->withErrors($v);
+        }
+
     $que=Questions::findOrFail($question_id);
     $que->question = $req['question'];
     $que->A = $req['A'];

@@ -48,8 +48,32 @@
 
                                       <a href="/unlock/{{$que->id}}" class="btn btn-success">Unlock</a>
 
+                                      <button type="button" class="btn " data-toggle="modal" data-target="#myLModal{{$que->id}}">Link</button>
+
+                                      <div class="modal fade" id="myLModal{{$que->id}}" role="dialog">
+                                         <div class="modal-dialog">
+
+                                           <!-- Modal content-->
+                                           <div class="modal-content">
+                                             <div class="modal-body">
+                                               <p>Copy to clipboard</p>
+                                               <input type="text"  value="{{$_SERVER['SERVER_NAME']}}/unlock/{{$que->id}}">
+                                             </div>
+                                             <div class="modal-footer">
+                                               <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                             </div>
+                                           </div>
+
+                                         </div>
+                                       </div>
+
+
                                       @else
                                       <a href="/lock/{{$que->id}}" class="btn btn-warning">Lock</a>
+
+
+
+
                                       @endif
                                       <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal{{$que->id}}">Delete</button>
 
