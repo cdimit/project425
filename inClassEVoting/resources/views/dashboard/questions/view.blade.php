@@ -23,7 +23,6 @@
                                   <th>C</th>
                                   <th>D</th>
                                   <th>Solution</th>
-                                  <th>Label</th>
                                   <th>Seconds</th>
                                   <th>Options</th>
 
@@ -34,13 +33,12 @@
                            @foreach($questions as $que)
                                <tr>
                                   <td>{{ $que->chapter }}</td>
-                                  <td>{{ $que->question }}</td>
-                                  <td>{{ $que->A }}</td>
-                                  <td>{{ $que->B }}</td>
-                                  <td>{{ $que->C }}</td>
-                                  <td>{{ $que->D }}</td>
+                                  <td data-toggle="tooltip" title="{{$que->question}}">{{ str_limit($que->question, 16) }}</td>
+                                  <td data-toggle="tooltip" title="{{$que->A}}">{{ str_limit($que->A, 16) }}</td>
+                                  <td data-toggle="tooltip" title="{{$que->B}}">{{ str_limit($que->B, 16) }}</td>
+                                  <td data-toggle="tooltip" title="{{$que->C}}">{{ str_limit($que->C, 16) }}</td>
+                                  <td data-toggle="tooltip" title="{{$que->D}}">{{ str_limit($que->D, 16) }}</td>
                                   <td>{{ $que->solution }}</td>
-                                  <td>{{ $que->label }}</td>
                                   <td>{{ $que->seconds  }}</td>
                                   <td><a href="/dashboard/question/{{$que->id}}/edit" class="btn btn-primary">Edit</a>
 

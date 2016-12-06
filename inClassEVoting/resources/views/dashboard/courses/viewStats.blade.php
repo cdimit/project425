@@ -35,16 +35,16 @@
                                  <tr>
                                    <?php
                                    if($que->solution == 'A'){
-                                      $c1="#00FF00";
+                                      $c1="#9de7d7";
                                       $c2="";$c3="";$c4="";}
                                    if($que->solution == 'B'){
-                                      $c2="#00FF00";
+                                      $c2="#9de7d7";
                                       $c1="";$c3="";$c4="";}
                                    if($que->solution == 'C'){
-                                      $c3="#00FF00";
+                                      $c3="#9de7d7";
                                       $c1="";$c2="";$c4="";}
                                    if($que->solution == 'D'){
-                                      $c4="#00FF00";
+                                      $c4="#9de7d7";
                                       $c1="";$c2="";$c3="";}
                                   ?>
 
