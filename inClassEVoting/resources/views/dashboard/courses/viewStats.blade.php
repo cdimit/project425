@@ -21,6 +21,7 @@
                     <table id="example" class="table table-striped" width="100%" cellspacing="0">
                               <thead>
                                 <tr>
+                                    <th>Chapter</th>
                                     <th>Question</th>
                                     <th>A(1st vote/2nd vote)</th>
                                     <th>B(1st vote/2nd vote)</th>
@@ -47,12 +48,12 @@
                                       $c4="#9de7d7";
                                       $c1="";$c2="";$c3="";}
                                   ?>
-
-                                    <td>{{ $que->question }}</td>
-                                    <td bgcolor={{$c1}}>{{$answer1->where('question_id',$que->id)->where('answer',1)->count()}}/{{$answer2->where('question_id',$que->id)->where('answer',1)->count()}}</td>
-                                    <td bgcolor={{$c2}}>{{$answer1->where('question_id',$que->id)->where('answer',2)->count()}}/{{$answer2->where('question_id',$que->id)->where('answer',2)->count()}}</td>
-                                    <td bgcolor={{$c3}}>{{$answer1->where('question_id',$que->id)->where('answer',3)->count()}}/{{$answer2->where('question_id',$que->id)->where('answer',3)->count()}}</td>
-                                    <td bgcolor={{$c4}}>{{$answer1->where('question_id',$que->id)->where('answer',4)->count()}}/{{$answer2->where('question_id',$que->id)->where('answer',4)->count()}}</td>
+                                    <td>{{$que->chapter}}</td>
+                                    <td data-toggle="tooltip" title="{{$que->question}}">{{$que->question}}</td>
+                                    <td data-toggle="tooltip" title="{{$que->A}}" bgcolor={{$c1}}>{{$answer1->where('question_id',$que->id)->where('answer',1)->count()}}/{{$answer2->where('question_id',$que->id)->where('answer',1)->count()}}</td>
+                                    <td data-toggle="tooltip" title="{{$que->B}}" bgcolor={{$c2}}>{{$answer1->where('question_id',$que->id)->where('answer',2)->count()}}/{{$answer2->where('question_id',$que->id)->where('answer',2)->count()}}</td>
+                                    <td data-toggle="tooltip" title="{{$que->C}}" bgcolor={{$c3}}>{{$answer1->where('question_id',$que->id)->where('answer',3)->count()}}/{{$answer2->where('question_id',$que->id)->where('answer',3)->count()}}</td>
+                                    <td data-toggle="tooltip" title="{{$que->D}}" bgcolor={{$c4}}>{{$answer1->where('question_id',$que->id)->where('answer',4)->count()}}/{{$answer2->where('question_id',$que->id)->where('answer',4)->count()}}</td>
 
                                  </tr>
                               @endforeach
