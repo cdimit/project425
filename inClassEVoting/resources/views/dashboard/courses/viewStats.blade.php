@@ -31,7 +31,7 @@
                               </thead>
                              <tbody>
                                <?php  $c1="";$c2="";$c3="";$c4="";?>
-                             @foreach($course->questions as $que)
+                             @foreach($course->questions->sortBy('chapter') as $que)
 
                                  <tr>
                                    <?php

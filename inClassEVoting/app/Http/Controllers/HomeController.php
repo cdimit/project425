@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Questions;
 use App\Answer1;
 use App\Answer2;
+use Cookie;
 
 class HomeController extends Controller
 {
@@ -43,11 +44,17 @@ class HomeController extends Controller
       if ($answer!=1 && $answer!=2 && $answer!=3 && $answer!=4  ) {
         return redirect('/');
       }
-      Answer1::create([
-        'question_id'=>$id,
-        'answer'=>$answer,
 
-      ]);
+
+      if(!Cookie::get('q'.$id.'a1')){
+        Cookie::queue('q'.$id.'a1', 'q'.$id.'a1', 60); //queue($name, $value, $minutes);
+
+        Answer1::create([
+          'question_id'=>$id,
+          'answer'=>$answer,
+        ]);
+      }
+
       switch ($answer) {
         case 1:
           $answerstr = $question->A;
@@ -93,11 +100,17 @@ class HomeController extends Controller
           if ($answer!=1 && $answer!=2 && $answer!=3 && $answer!=4  ) {
             return redirect('/');
           }
-          Answer2::create([
-            'question_id'=>$id,
-            'answer'=>$answer,
 
-          ]);
+          if(!Cookie::get('q'.$id.'a2')){
+            Cookie::queue('q'.$id.'a2', 'q'.$id.'a2', 60); //queue($name, $value, $minutes);
+
+            Answer2::create([
+              'question_id'=>$id,
+              'answer'=>$answer,
+
+            ]);
+          }
+
           switch ($answer) {
             case 1:
               $answerstr = $question->A;
