@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading">{{$question->course->code}} : {{$question->course->name}}</div>
 
@@ -11,7 +11,7 @@
                   <h1><div id="countdowntimer">{{$question->seconds}}</div></h1>
                   <h1>{{$question->question}}</h1>
                   <br>
-                  <h2><span class="label label-success">{{$question->A}}</span></h2>
+                  <h2><span class="label label-success ">{{$question->A}}</span></h2>
                   <h2><span class="label label-danger">{{$question->B}}</span></h2>
                   <h2><span class="label label-warning">{{$question->C}}</span></h2>
                   <h2><span class="label label-primary">{{$question->D}}</span></h2>

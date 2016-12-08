@@ -10,13 +10,13 @@
                 <div class="panel-body">
                   <h1>{{$question->question}}</h1>
                   <br>
-                  <a href="/question/{{$question->id}}/result2?answer2=1" class="btn btn-success">{{$question->A}}</a>
+                  <a href="/question/{{$question->id}}/result2?answer2=1" class="btn btn-success btn-responsive">{{$question->A}}</a>
                   <br><br>
-                  <a href="/question/{{$question->id}}/result2?answer2=2" class="btn btn-danger">{{$question->B}}</a>
+                  <a href="/question/{{$question->id}}/result2?answer2=2" class="btn btn-danger btn-responsive">{{$question->B}}</a>
                   <br><br>
-                  <a href="/question/{{$question->id}}/result2?answer2=3" class="btn btn-warning">{{$question->C}}</a>
+                  <a href="/question/{{$question->id}}/result2?answer2=3" class="btn btn-warning btn-responsive">{{$question->C}}</a>
                   <br><br>
-                  <a href="/question/{{$question->id}}/result2?answer2=4" class="btn btn-primary">{{$question->D}}</a>
+                  <a href="/question/{{$question->id}}/result2?answer2=4" class="btn btn-primary btn-responsive">{{$question->D}}</a>
                   <br>
 
 
