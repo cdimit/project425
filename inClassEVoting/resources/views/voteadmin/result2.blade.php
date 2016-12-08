@@ -37,6 +37,10 @@
 
                   <canvas id="myChart"></canvas>
                     <br><br>
+                    <h2><label class='label label-success' id="laper"></label></h2>
+                    <h2><label class='label label-danger' id="lbper"></label></h2>
+                    <h2><label class='label label-warning' id="lcper"></label></h2>
+                    <h2><label class='label label-primary' id="ldper"></label></h2>
                     <a href="/dashboard" class="btn btn-primary btn-block">Finish</a>
 
 
@@ -50,6 +54,15 @@
 update();
 
 function chart(a,b,c,d) {
+  var all=parseInt(a)+parseInt(b)+parseInt(c)+parseInt(d);
+  var aper=Math.round((a/all)*100 * 100) / 100;
+  var bper=Math.round((b/all)*100 * 100) / 100;
+  var cper=Math.round((c/all)*100 * 100) / 100;
+  var dper=Math.round((d/all)*100 * 100) / 100;
+  document.getElementById("laper").innerHTML=aper+'%';
+  document.getElementById("lbper").innerHTML=bper+'%';
+  document.getElementById("lcper").innerHTML=cper+'%';
+  document.getElementById("ldper").innerHTML=dper+'%';
 var ctx = document.getElementById("myChart");
 var myChart = new Chart(ctx, {
     type: 'pie',

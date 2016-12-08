@@ -79,7 +79,7 @@
                             <label for="key" class="col-md-4 control-label">Key</label>
 
                             <div class="col-md-6">
-                                <input id="key" type="password" class="form-control" name="key" value="" required>
+                                <input id="key" type="password" class="form-control" name="key" required>
 
                                 @if ($errors->has('key'))
                                     <span class="help-block">
