@@ -49,11 +49,14 @@ class RegisterController extends Controller
     {
 
       $key = env('REGISTER_KEY');
+      if($data['key']!=$key){
+        $data['key'] = '';
+      }
 
         return Validator::make($data, [
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
-            'key' => 'required|same:'.$key,
+            'key' => 'required',
         ]);
     }
 

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Questions;
 use App\Course;
 use Auth;
+use File;
 
 class QuestionController extends Controller
 {
@@ -38,8 +39,11 @@ class QuestionController extends Controller
     if ($v->fails()) {
             return redirect()->back()->withErrors($v);
     }
-
-
+    if(!empty($req['header_pic'])){
+      $pic = $req['header_pic']->store('question_header', 'uploads');
+    }else{
+      $pic=null;
+    }
 
     Questions::create([
         'question' => $req['question'],
@@ -50,8 +54,8 @@ class QuestionController extends Controller
         'solution' => $req['solution'],
         'course_id' => $req['course_id'],
         'seconds' => $req['seconds'],
-        'chapter' => $req['chapter']
-
+        'chapter' => $req['chapter'],
+        'header_pic' => $pic
     ]);
 
     return redirect('/dashboard')->with('status', 'Question was successfully created!');
@@ -74,15 +78,25 @@ class QuestionController extends Controller
                 return redirect()->back()->withErrors($v);
         }
 
-    $que=Questions::findOrFail($question_id);
+        $que=Questions::findOrFail($question_id);
+
+        if(!empty($req['header_pic'])){
+          $pic = $req['header_pic']->store('question_header', 'uploads');
+          if($que->header_pic!=null){
+            File::delete('img/'.$que->header_pic); //delete the previous image
+          }
+        }else{
+          $pic=$que->header_pic;
+        }
+
     $que->question = $req['question'];
+    $que->header_pic = $pic;
     $que->A = $req['A'];
     $que->B = $req['B'];
     $que->C = $req['C'];
     $que->D = $req['D'];
     $que->solution = $req['solution'];
     $que->course_id = $req['course_id'];
-    $que->label = $req['label'];
     $que->seconds = $req['seconds'];
     $que->chapter = $req['chapter'];
     $que->save();

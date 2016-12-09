@@ -13,7 +13,7 @@
                     </div>
                   @endif
 
-                    <form class="form-horizontal" role="form" method="POST" action="/dashboard/question/{{$question->id}}/edit">
+                    <form class="form-horizontal" role="form" method="POST" action="/dashboard/question/{{$question->id}}/edit" enctype="multipart/form-data">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('question') ? ' has-error' : '' }}">
@@ -30,6 +30,21 @@
                             </div>
                         </div>
 
+                        <div class="form-group{{ $errors->has('header_pic') ? ' has-error' : '' }}">
+                            <label for="haeder_pic" class="col-md-4 control-label">Header Picture</label>
+
+                            <div class="col-md-6">
+                                <input id="header_pic" type="file" name="header_pic">
+                                @if($question->header_pic!=null)
+                                <a href="/img/{{$question->header_pic}}"><img class="img-responsive" src="/img/{{$question->header_pic}}" /></a>
+                                @endif
+                                @if ($errors->has('header_pic'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('header_pic') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
 
                         <div class="form-group{{ $errors->has('A') ? ' has-error' : '' }}">
                             <label for="A" class="col-md-4 control-label">A</label>

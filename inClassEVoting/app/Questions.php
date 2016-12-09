@@ -19,7 +19,7 @@ class Questions extends Model
    * @var array
    */
   protected $fillable = [
-    'question','A','B','C','D','solution','course_id','label','isPic','lock','seconds','chapter'
+    'question','A','B','C','D','solution','course_id','label','isPic','lock','seconds','chapter', 'header_pic'
   ];
 
   public function answer1()

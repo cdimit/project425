@@ -15,6 +15,7 @@ class CreateQuestionTable extends Migration
     {
       Schema::create('questions', function (Blueprint $table) {
           $table->increments('id');
+          $table->string('header_pic')->nullable();
           $table->string('question');
           $table->string('A');
           $table->string('B');
@@ -22,7 +23,6 @@ class CreateQuestionTable extends Migration
           $table->string('D');
           $table->string('solution');
           $table->integer('course_id')->unsigned();
-          $table->boolean('isPic')->default(0);
           $table->boolean('lock')->default(1);
           $table->integer('seconds')->default(60);
           $table->integer('chapter');

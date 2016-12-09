@@ -8,15 +8,21 @@
                 <div class="panel-heading">{{$question->course->code}} : {{$question->course->name}}</div>
 
                 <div class="panel-body">
+                  @if($question->header_pic!=null)
+                  <img class="img-responsive" src="/img/{{$question->header_pic}}" />
+                  @endif
                   <h1><div id="countdowntimer">{{$question->seconds}}</div></h1>
                   <h1>{{$question->question}}</h1>
                   <br>
-                  <h2><span class="label label-success ">{{$question->A}}</span></h2>
-                  <h2><span class="label label-danger">{{$question->B}}</span></h2>
-                  <h2><span class="label label-warning">{{$question->C}}</span></h2>
-                  <h2><span class="label label-primary">{{$question->D}}</span></h2>
+                  <a href="#" class="btn btn-success btn-block btn-responsive">{{$question->A}}</a>
+                  <br>
+                  <a href="#" class="btn btn-danger  btn-block btn-responsive">{{$question->B}}</a>
+                  <br>
+                  <a href="#" class="btn btn-warning  btn-block btn-responsive">{{$question->C}}</a>
+                  <br>
+                  <a href="#" class="btn btn-primary  btn-block btn-responsive">{{$question->D}}</a>
                   <br><br>
-                  <a href="/admin/question/{{$question->id}}/result1" class="btn btn-primary btn-block">Next</a>
+                  <a href="/admin/question/{{$question->id}}/result1" class="btn btn-info btn-block">Next</a>
 
 
                   <script type="text/javascript">

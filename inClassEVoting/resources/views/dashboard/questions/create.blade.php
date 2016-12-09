@@ -12,8 +12,7 @@
                       <strong>{{ session('status') }}</strong>
                     </div>
                   @endif
-
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/question/create') }}">
+                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/question/create') }}" enctype="multipart/form-data">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('question') ? ' has-error' : '' }}">
@@ -24,6 +23,20 @@
                                 @if ($errors->has('question'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('question') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('header_pic') ? ' has-error' : '' }}">
+                            <label for="haeder_pic" class="col-md-4 control-label">Header Picture</label>
+
+                            <div class="col-md-6">
+                                <input id="header_pic" type="file" name="header_pic">
+
+                                @if ($errors->has('header_pic'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('header_pic') }}</strong>
                                     </span>
                                 @endif
                             </div>
