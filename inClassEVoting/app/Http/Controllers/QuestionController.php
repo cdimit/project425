@@ -25,8 +25,9 @@ class QuestionController extends Controller
 
   private $form_rules = [
           'solution'  => 'required',
-          'seconds'    => 'required|numeric',
-          'chapter'    => 'required|numeric',
+          'seconds'   => 'required|numeric',
+          'chapter'   => 'required|numeric',
+          'header_pic'      => 'mimes:png,jpeg,bmp|max:5120',
   ];
 
   public function create(Request $req)
