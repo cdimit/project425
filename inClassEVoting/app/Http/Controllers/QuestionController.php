@@ -27,7 +27,7 @@ class QuestionController extends Controller
           'solution'  => 'required',
           'seconds'   => 'required|numeric',
           'chapter'   => 'required|numeric',
-          'header_pic'      => 'mimes:png,jpeg,bmp|max:5120',
+          'header_pic'      => 'mimes:png,jpeg,bmp',
   ];
 
   public function create(Request $req)

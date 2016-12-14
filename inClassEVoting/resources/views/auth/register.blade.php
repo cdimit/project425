@@ -30,7 +30,6 @@
 
                             <div class="col-md-6">
                                 <input id="last_name" type="last_name" class="form-control" name="last_name" value="{{ old('last_name') }}" required>
-
                                 @if ($errors->has('last_name'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('last_name') }}</strong>

@@ -9,7 +9,7 @@
 
                 <div class="panel-body">
                   @if($question->header_pic!=null)
-                  <img class="img-responsive" src="/img/{{$question->header_pic}}" />
+                  <img class="img-responsive center-block" src="/img/{{$question->header_pic}}" />
                   @endif
                   <h1><div id="countdowntimer">{{$question->seconds}}</div></h1>
                   <h1>{{$question->question}}</h1>
